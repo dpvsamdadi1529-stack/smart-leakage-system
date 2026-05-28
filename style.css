@@ -107,9 +107,11 @@ textarea, input[type="email"] {
 #complaintsList {
     min-height: 50px;
     text-align: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 #complaintsList > p {
     margin: 0;
-    padding: 15px;
 }

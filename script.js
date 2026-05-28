@@ -34,6 +34,21 @@ function changeStatus(){
 
 }
 
+// Update distance dynamically
+setInterval(changeDistance, 5000);
+
+function changeDistance(){
+    let distance = document.getElementById("distance");
+    let currentDistance = parseFloat(distance.innerHTML);
+    
+    // Simulate distance change (decrease by 0.1m then reset)
+    if(currentDistance > 2.0){
+        distance.innerHTML = (currentDistance - 0.1).toFixed(1) + " meters";
+    } else {
+        distance.innerHTML = "2.5 meters";
+    }
+}
+
 // Complaint System
 let complaints = JSON.parse(localStorage.getItem('complaints')) || [];
 
