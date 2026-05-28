@@ -22,6 +22,7 @@ function changeStatus(){
 
         status.innerHTML = "SAFE";
         status.style.color = "green";
+        updateDistance("SAFE");
 
     }
 
@@ -29,23 +30,26 @@ function changeStatus(){
 
         status.innerHTML = "LEAKAGE DETECTED";
         status.style.color = "red";
+        updateDistance("LEAKAGE DETECTED");
 
     }
 
 }
 
-// Update distance dynamically
-setInterval(changeDistance, 5000);
-
-function changeDistance(){
+// Update distance based on leakage status
+function updateDistance(leakageStatus){
     let distance = document.getElementById("distance");
-    let currentDistance = parseFloat(distance.innerHTML);
     
-    // Simulate distance change (decrease by 0.1m then reset)
-    if(currentDistance > 2.0){
-        distance.innerHTML = (currentDistance - 0.1).toFixed(1) + " meters";
+    if(leakageStatus === "LEAKAGE DETECTED"){
+        // When leakage is detected, show dynamic distance values
+        let distances = ["1.2 meters", "1.5 meters", "2.0 meters", "2.3 meters"];
+        let randomDistance = distances[Math.floor(Math.random() * distances.length)];
+        distance.innerHTML = randomDistance;
+        distance.style.color = "red";
     } else {
-        distance.innerHTML = "2.5 meters";
+        // When safe, show no leakage or far distance
+        distance.innerHTML = "No leakage detected";
+        distance.style.color = "green";
     }
 }
 
