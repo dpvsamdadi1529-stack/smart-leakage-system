@@ -103,3 +103,13 @@ textarea, input[type="email"] {
 .delete-btn:hover {
     background-color: #c9302c;
 }
+
+#complaintsList {
+    min-height: 50px;
+    text-align: center;
+}
+
+#complaintsList > p {
+    margin: 0;
+    padding: 15px;
+}
