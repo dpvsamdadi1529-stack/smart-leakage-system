@@ -25,6 +25,22 @@
         <button onclick="changePump()">TURN PUMP OFF</button>
     </div>
 
+    <div>
+        <h2>Submit Complaint</h2>
+        <form id="complaintForm">
+            <textarea id="complaintText" placeholder="Describe your complaint..." rows="4" required></textarea>
+            <input type="email" id="complaintEmail" placeholder="Your email (optional)" />
+            <button type="submit" class="submit-btn">Submit Complaint</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>Recent Complaints</h2>
+        <div id="complaintsList">
+            <p style="color: gray; font-size: 14px;">No complaints yet</p>
+        </div>
+    </div>
+
 <script src="script.js"></script>
 </body>
 </html>
